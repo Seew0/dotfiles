@@ -1,18 +1,15 @@
 #!/bin/bash
 
-echo -n "USERNAME: "
-read USERNAME
-echo -n "HOSTNAME: "
-read HOSTNAME
-echo -n "PASSWORD: "
-read PASSWORD
+USERNAME="seew"
+HOSTNAME="arch"
+PASSWORD="pass"
 sed -i '178s/.//' /etc/locale.gen
 locale-gen
 echo "root:$PASSWORD" | chpasswd
 echo $HOSTNAME >> /etc/hostname
-pacman -S linux-headers networkmanager grub mtools openssh polkit git dosfstools os-prober --noconfirm
+pacman -S linux-headers networkmanager efibootmgr grub mtools openssh polkit git dosfstools os-prober --noconfirm
 
-grub-install /dev/sda
+grub-install --target=x86_64-efi --bootloader-id=grub_uefi --efi-directory=/boot/efi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
