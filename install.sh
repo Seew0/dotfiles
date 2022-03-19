@@ -1,7 +1,7 @@
 #!/bin/bash
 
 fdisk /dev/sda
-reflector --latest 50 --sort rate --save /etc/pacman.d/mirrorlist
+reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 mkfs.ext4 /dev/sda2
 mkfs.fat -F 32 /dev/sda1
 mount /dev/sda2 /mnt
