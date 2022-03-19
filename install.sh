@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cfdisk /dev/sda
+fdisk /dev/sda
 reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 mkfs.ext4 /dev/sda2
 mkfs.fat -F 32 /dev/sda1
