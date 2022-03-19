@@ -12,7 +12,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 curl -LO raw.githubusercontent.com/Seew0/minimal-arch-linux/main/user-setup.sh
 cp user-setup /mnt/root
 echo "Copied file in root"
-arch-chroot /mnt sh /root/user-setup
+arch-chroot /mnt sh /root/user-setup.sh
 rm /mnt/root/user-setup
 umount -a
 reboot
