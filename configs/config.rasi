@@ -1,0 +1,82 @@
+configuration {
+    display-drun: "Applications:";
+    drun-display-format: "{name}";
+    modi: "drun";
+    font: "Hack 11";
+}
+
+window {
+	width: 40%;
+	border: 2px;
+	border-color: @background;
+}
+
+element {
+	padding: 10;
+	text-color: @foreground;
+}
+
+element selected.normal {
+    background-color: @foreground;
+    text-color: @background;
+}
+
+element selected {
+	text-color: @foreground;
+}
+
+element-text {
+	background-color: inherit;
+	text-color: inherit;
+	vertical-align: 0.5;
+}
+
+element-icon {
+	size: 22;
+}
+
+entry {
+	background-color: @background;
+	padding: 10;
+	text-color: @foreground;
+}
+
+case-indicator {
+    spacing: 0;
+    text-color: @foreground;
+}
+
+inputbar {
+	children: [prompt, entry, case-indicator];
+}
+
+scrollbar {
+	background-color: #15151b;
+	handle-width: 8px;
+	handle-color: @foreground;
+}
+
+listview {
+	padding: 8 10;
+	background-color: @background;
+	columns: 1;
+	lines: 8;
+	scrollbar: false;
+}
+
+mainbox {
+  background-color: @background;
+  children: [inputbar, listview];
+  padding: 6;
+  border: 0px;
+  border-color: @foreground;
+}
+
+prompt {
+  background-color: @background;
+  enabled: true;
+  padding: 10 0 0 10;
+  text-color: @foreground;
+}
+/* Dark theme. */
+@import "~/.cache/wal/colors-rofi-dark"
