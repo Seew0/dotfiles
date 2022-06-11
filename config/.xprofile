@@ -1,0 +1,7 @@
+feh --bg-scale /home/seew/Downloads/wapp.jpg
+
+nm-applet &
+
+wal -R &
+
+
