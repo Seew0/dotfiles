@@ -11,7 +11,7 @@ pacstrap /mnt base linux base-devel vim linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 curl -LO raw.githubusercontent.com/Seew0/minimal-arch-linux/main/user
 cp user /mnt/root
-echo "Copied file in root"
+echo "Copy ho gya root mein"
 arch-chroot /mnt sh /root/user
 rm /mnt/root/user
 umount -a

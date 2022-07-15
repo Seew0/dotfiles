@@ -19,5 +19,5 @@ echo "$USERNAME:$PASSWORD" | chpasswd
 
 echo "$USERNAME ALL=(ALL) ALL" >> /etc/sudoers.d/$USERNAME
 
-echo "Completed!"
+echo "ho GYA!"
 
